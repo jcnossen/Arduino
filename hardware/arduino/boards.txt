@@ -522,3 +522,61 @@ atmega8.build.mcu=atmega8
 atmega8.build.f_cpu=16000000L
 atmega8.build.core=arduino
 atmega8.build.variant=standard
+
+
+
+##############################################################
+
+at90usb64x.name=AT90USB64x (16MHz external clock)
+
+at90usb64x.upload.protocol=stk500
+at90usb64x.upload.maximum_size=65536
+at90usb64x.upload.speed=57600
+
+# low-fuse is same as atmega328 range
+at90usb64x.bootloader.low_fuses=0xFE 
+at90usb64x.bootloader.high_fuses=0x1F
+at90usb64x.bootloader.extended_fuses=0xF9
+at90usb64x.bootloader.unlock_bits=0x3F
+at90usb64x.bootloader.lock_bits=0x0F
+
+at90usb64x.build.mcu=at90usb646
+at90usb64x.build.f_cpu=16000000L
+at90usb64x.build.core=arduino
+at90usb64x.build.variant=at90usbx
+
+# translating into USB_PID and USB_VID preprocessor symbols:
+# LUFA VID/PID:
+#at90usb64x.build.vid=0x03EB
+#at90usb64x.build.pid=0x2040
+# Leonardo
+at90usb64x.build.vid=0x2341
+at90usb64x.build.pid=0x8036
+
+##############################################################
+
+at64xrc.name=AT90USB64x (8MHz internal, no bootloader)
+
+at64xrc.upload.protocol=stk500
+at64xrc.upload.maximum_size=65536
+at64xrc.upload.speed=57600
+
+# low-fuse is same as atmega328 range
+at64xrc.bootloader.low_fuses=0xD2
+at64xrc.bootloader.high_fuses=0x1F
+at64xrc.bootloader.extended_fuses=0xFF
+at64xrc.bootloader.unlock_bits=0x3F
+at64xrc.bootloader.lock_bits=0x0F
+
+at64xrc.build.mcu=at90usb646
+at64xrc.build.f_cpu=8000000L
+at64xrc.build.core=arduino
+at64xrc.build.variant=at90usbx
+
+# translating into USB_PID and USB_VID preprocessor symbols:
+# LUFA VID/PID:
+#at64xrc.build.vid=0x03EB
+#at64xrc.build.pid=0x2040
+# Leonardo
+at64xrc.build.vid=0x2341
+at64xrc.build.pid=0x8036
